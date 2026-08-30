@@ -409,27 +409,27 @@
         })();
     </script>
 
-    <!-- 1. TOP CONTACT BAR -->
-    <div class="top-bar w-full py-2 px-6 text-xs text-slate-300 hidden md:block border-b border-slate-800 z-50 relative">
-        <div class="container mx-auto flex justify-between items-center">
+    <!-- 1. TOP CONTACT BAR (Fixed and Ennlarged) -->
+    <div class="top-bar w-full h-[52px] px-6 text-sm font-semibold text-slate-200 hidden md:flex items-center border-b border-slate-800 z-[60] fixed top-0 left-0 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center w-full">
             <div class="flex items-center gap-6">
                 <a href="mailto:tendernexindia@gmail.com" class="flex items-center gap-2 hover:text-white transition-colors" aria-label="Email TenderNex India">
-                    <i data-lucide="mail" class="w-3.5 h-3.5"></i> tendernexindia@gmail.com
+                    <i data-lucide="mail" class="w-4 h-4 text-brand-400"></i> tendernexindia@gmail.com
                 </a>
                 <a href="tel:+916294931919" class="flex items-center gap-2 hover:text-white transition-colors" aria-label="Call TenderNex India">
-                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91 6294931919
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-400"></i> +91 6294931919
                 </a>
             </div>
-            <div class="flex items-center gap-4 font-medium">
-                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Sodepur, Kolkata</span>
+            <div class="flex items-center gap-5">
+                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-brand-400"></i> Sodepur, Kolkata</span>
                 <span class="text-slate-600">|</span>
-                <span>GSTIN: <span class="text-white tracking-wider">19IVGPB7449H1Z5</span></span>
+                <span class="flex items-center gap-2"><i data-lucide="receipt" class="w-4 h-4 text-brand-400"></i> GSTIN: <span class="text-white tracking-wider">19IVGPB7449H1Z5</span></span>
             </div>
         </div>
     </div>
 
-    <!-- 2. HEADER / NAVIGATION -->
-    <header id="main-header" class="fixed w-full top-0 md:top-[33px] z-50 py-4 lg:py-5">
+    <!-- 2. HEADER / NAVIGATION (Adjusted below fixed top bar) -->
+    <header id="main-header" class="fixed w-full top-0 md:top-[52px] z-50 py-4 lg:py-5">
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
             
             <!-- Brand Logo -->
@@ -955,12 +955,8 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 header.classList.add('scrolled');
-                header.classList.remove('md:top-[33px]');
-                header.classList.add('top-0');
             } else {
                 header.classList.remove('scrolled');
-                header.classList.remove('top-0');
-                header.classList.add('md:top-[33px]');
             }
         });
 
