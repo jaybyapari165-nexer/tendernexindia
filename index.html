@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TENDER NEX INDIA | Premium Tender Consultancy</title>
-    <meta name="description" content="Discover suitable government and private tender opportunities. We manage the tender submission process from A to Z.">
+    <!-- SEO Titles & Meta -->
+    <title>TenderNex | Complete Tender & GeM Tender Management Services India</title>
+    <meta name="description" content="TenderNex provides end-to-end tender and GeM tender management services in India, from tender search and submission to catalogue, OEM and order-process support. Fixed 5% success-based service fee.">
+    <meta name="keywords" content="TenderNex, TenderNex India, tender service, tender consultancy, GeM tender service, government tender bidding, Kolkata tender consultant">
+    <link rel="canonical" href="https://tendernexindia.pages.dev/">
     
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TenderNex | Complete Tender Management">
+    <meta property="og:description" content="No Subscription. No Monthly Fee. Fixed 5% Success-Based Service Fee. We manage your tender process from opportunity identification to order completion.">
+    <meta property="og:url" content="https://tendernexindia.pages.dev/">
+    <meta property="og:site_name" content="TenderNex">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,744 +35,889 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0B1F3A',
-                            navylight: '#153259',
-                            navydark: '#071426',
-                            gold: '#C9A227',
-                            goldlight: '#DFB83C',
-                            offwhite: '#FAFAFA',
+                            50: '#f0f5ff',
+                            100: '#e5edff',
+                            200: '#cddbfe',
+                            300: '#b4c6fc',
+                            400: '#8da2fb',
+                            500: '#6875f5', /* Primary Accent */
+                            600: '#5850ec',
+                            700: '#5145cd',
+                            800: '#42389d',
+                            900: '#362f78', /* Deep Corporate */
+                            dark: '#0f172a',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     boxShadow: {
-                        'premium': '0 10px 40px -10px rgba(11, 31, 58, 0.08)',
-                        'premium-hover': '0 20px 50px -10px rgba(11, 31, 58, 0.15)',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'glow': '0 0 20px rgba(104, 117, 245, 0.5)',
+                        'bento': '0 4px 24px -4px rgba(15, 23, 42, 0.05)',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
         }
     </script>
 
-    <!-- Custom CSS for specific overrides & micro-interactions -->
+    <!-- Custom CSS -->
     <style>
-        /* Base styles */
         body {
-            background-color: #FAFAFA;
-            color: #1A202C;
+            background-color: #f8fafc; /* Changed from #FAFAFA to a soft corporate slate */
+            color: #0f172a;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Subtle Background Textures */
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, rgba(201, 162, 39, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(201, 162, 39, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        
-        .bg-dot-pattern {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        /* Header Transitions */
+        /* Glass Header */
         #main-header {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
         #main-header.scrolled {
-            background-color: rgba(11, 31, 58, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
 
-        /* Timeline specific CSS */
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, #C9A227, transparent);
-            z-index: 0;
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
         }
-        @media (max-width: 768px) {
-            .timeline-line {
-                left: 24px;
-                transform: none;
-            }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #362f78 0%, #6875f5 100%);
+        }
+
+        /* Bento Grid Cards */
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px -4px rgba(15, 23, 42, 0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(104, 117, 245, 0.05) 0%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px -10px rgba(104, 117, 245, 0.15);
+            border-color: rgba(104, 117, 245, 0.2);
+        }
+        .bento-card:hover::before {
+            opacity: 1;
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FAFAFA; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0B1F3A; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #C9A227; 
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAFAFA; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6875f5; }
+
+        /* Modern Grid Pattern */
+        .modern-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
         }
 
-        /* Card Hover Lift */
-        .card-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        /* Faster 2.5s Highlight Animation */
+        @keyframes pop-highlight {
+            0%, 90%, 100% { transform: scale(1); color: inherit; text-shadow: none; }
+            95% { transform: scale(1.15); color: #6875f5; text-shadow: 0 0 15px rgba(104, 117, 245, 0.8); }
         }
-        .card-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px -10px rgba(11, 31, 58, 0.12);
-            border-color: #C9A227;
+        .highlight-blink {
+            display: inline-block;
+            animation: pop-highlight 2.5s infinite;
+            font-weight: 900;
+        }
+
+        /* Premium Intro Loader */
+        .glass-block {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 
+                0 8px 32px rgba(15, 23, 42, 0.04),
+                inset 0 0 20px rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            opacity: 0;
+        }
+
+        @keyframes dropIn {
+            0% { transform: translateY(-80px) rotate(-2deg); opacity: 0; }
+            60% { transform: translateY(12px) rotate(1deg); opacity: 1; }
+            80% { transform: translateY(-4px) rotate(0deg); }
+            100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: scale(0.9); filter: blur(4px); }
+            100% { opacity: 1; transform: scale(1); filter: blur(0); }
+        }
+
+        .tn-block { animation: dropIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+        .tn-block-1 { animation-delay: 0.1s; }
+        .tn-block-2 { animation-delay: 0.25s; }
+        .tn-block-3 { animation-delay: 0.4s; }
+
+        .tn-text { opacity: 0; display: inline-block; }
+        .tn-text-1 { animation: textReveal 0.4s ease-out 0.45s forwards; }
+        .tn-text-2 { animation: textReveal 0.4s ease-out 0.60s forwards; }
+        .tn-text-3 { animation: textReveal 0.4s ease-out 0.75s forwards; }
+
+        .loader-exit {
+            opacity: 0 !important;
+            transform: scale(1.03) translateY(-10px);
+            pointer-events: none;
         }
         
-        /* Outline Button specific */
-        .btn-outline-ghost {
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
-        }
-        .btn-outline-ghost:hover {
-            border-color: #C9A227;
-            background-color: rgba(201, 162, 39, 0.1);
-            color: #C9A227;
+        @media (prefers-reduced-motion: reduce) {
+            .tn-block { animation: none !important; opacity: 1 !important; transform: none !important; }
+            .tn-text { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+            #tn-loader { transition: opacity 0.3s ease !important; }
         }
     </style>
-</head>
-<body class="font-sans overflow-x-hidden">
 
-    <!-- 1. HEADER / NAV -->
-    <header id="main-header" class="fixed w-full top-0 z-50 py-5 transition-all text-white border-b border-white/10">
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://tendernexindia.pages.dev/#organization",
+          "name": "TenderNex",
+          "url": "https://tendernexindia.pages.dev",
+          "logo": "https://tendernexindia.pages.dev/logo.png",
+          "description": "Complete Tender & GeM Tender Management Services in India. Fixed 5% success-based fee.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sodepur, Kolkata",
+            "addressRegion": "West Bengal",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-6294931919",
+            "email": "tendernexindia@gmail.com",
+            "contactType": "customer service",
+            "contactOption": "TollFree",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi", "Bengali"]
+          },
+          "taxID": "19IVGPB7449H1Z5"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you charge any upfront fees or subscriptions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We operate strictly on a 5% success-based fee. There are zero hidden charges, monthly subscriptions, or initial consultancy costs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does success-based mean and when is payment made?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It means we only earn when you earn. You pay our fixed 5% service fee only after you have successfully won the tender, fulfilled the order, and the government or buyer has credited the payment to your account."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens after winning the tender?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We coordinate the Purchase Order (PO) process and guide you through the post-order supply chain, ensuring all payment documentation is perfectly aligned for prompt government payment."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- PREMIUM INTRO LOADER -->
+    <div id="tn-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-50/85 backdrop-blur-2xl transition-all duration-700">
+        <div class="absolute w-[40rem] h-[40rem] bg-brand-200/30 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+        <div class="flex flex-col items-center gap-3">
+            <div class="tn-block tn-block-1 glass-block px-10 py-4 z-30">
+                <span class="tn-text tn-text-1 font-display font-extrabold text-3xl md:text-4xl tracking-[0.25em] text-brand-dark">TENDER</span>
+            </div>
+            <div class="tn-block tn-block-2 glass-block px-10 py-4 ml-12 z-20">
+                <span class="tn-text tn-text-2 font-display font-extrabold text-3xl md:text-4xl tracking-[0.25em] text-brand-600">NEX</span>
+            </div>
+            <div class="tn-block tn-block-3 glass-block px-8 py-2 -ml-8 z-10 border-brand-200/50 bg-brand-50/50">
+                <span class="tn-text tn-text-3 font-display font-bold text-sm md:text-base tracking-[0.4em] text-brand-500 uppercase">India</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- LOADER LOGIC -->
+    <script>
+        (function() {
+            const loader = document.getElementById('tn-loader');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            // 1.5s total hold time before triggering seamless dissolve
+            const duration = prefersReducedMotion ? 0 : 1500;
+            
+            setTimeout(() => {
+                if(loader) {
+                    loader.classList.add('loader-exit');
+                    // Fully remove from DOM after CSS transition completes
+                    setTimeout(() => loader.remove(), 700);
+                }
+            }, duration);
+        })();
+    </script>
+
+    <!-- TOP CONTACT BAR -->
+    <div class="top-bar w-full py-2 px-6 text-xs text-slate-300 hidden md:block border-b border-slate-800 z-50 relative">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="mailto:tendernexindia@gmail.com" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i> tendernexindia@gmail.com
+                </a>
+                <a href="tel:+916294931919" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91 6294931919 (Jay Byapari)
+                </a>
+            </div>
+            <div class="flex items-center gap-4 font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-500"></i> Sodepur, Kolkata</span>
+                <span class="text-slate-500">|</span>
+                <span>GSTIN: <span class="text-white tracking-wider">19IVGPB7449H1Z5</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="main-header" class="fixed w-full top-0 md:top-[33px] z-50 py-4 lg:py-5">
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
             
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <!-- Monogram SVG -->
-                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-brand-gold transition-transform group-hover:scale-105">
-                    <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
-                    <path d="M12 14H28M20 14V26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M28 26L20 14L12 26" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"/>
-                </svg>
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-brand-900 to-brand-600 flex items-center justify-center text-white shadow-glow group-hover:scale-105 transition-transform duration-300 border border-brand-400/30 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-white/20 w-full h-full transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                    <span class="font-display font-black text-lg md:text-xl tracking-tighter relative z-10">T<span class="text-brand-300">N</span></span>
+                </div>
                 <div class="flex flex-col">
-                    <span class="font-serif font-bold text-xl leading-tight tracking-wide">TENDER NEX</span>
-                    <span class="text-[0.65rem] tracking-[0.3em] font-medium text-brand-gold uppercase leading-none">India</span>
+                    <span class="font-display font-extrabold text-2xl text-brand-dark tracking-tight leading-none">TenderNex</span>
+                    <span class="text-[0.65rem] font-bold tracking-[0.2em] text-brand-500 uppercase mt-0.5">India</span>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden xl:flex items-center gap-8 text-sm font-medium">
-                <a href="#home" class="hover:text-brand-gold transition-colors">Home</a>
-                <a href="#about" class="hover:text-brand-gold transition-colors">About Us</a>
-                <a href="#services" class="hover:text-brand-gold transition-colors">Our Services</a>
-                <a href="#tenders" class="hover:text-brand-gold transition-colors">Tenders</a>
-                <a href="#process" class="hover:text-brand-gold transition-colors">How It Works</a>
-                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact Us</a>
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600 bg-white/50 px-8 py-3 rounded-full border border-white shadow-sm backdrop-blur-md">
+                <a href="#home" class="hover:text-brand-600 transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-600 transition-colors">Model</a>
+                <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+                <a href="#gem" class="hover:text-brand-600 transition-colors">GeM Experts</a>
+                <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
             </nav>
 
-            <!-- Auth Buttons -->
-            <div class="hidden md:flex items-center gap-4 text-sm font-medium">
-                <a href="#" class="btn-outline-ghost px-5 py-2 rounded-sm text-white">Login</a>
-                <a href="#" class="btn-outline-ghost px-5 py-2 rounded-sm text-white">Register</a>
+            <!-- CTA -->
+            <div class="hidden lg:block">
+                <a href="#contact" class="bg-brand-dark hover:bg-brand-600 text-white px-7 py-3 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg shadow-brand-dark/20 hover:shadow-brand-600/30 flex items-center gap-2 group">
+                    Start Winning 
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button class="xl:hidden text-white hover:text-brand-gold transition-colors" id="mobile-menu-btn">
+            <button class="lg:hidden text-brand-dark p-2 bg-white rounded-lg shadow-sm border border-slate-100" id="mobile-menu-btn" aria-label="Toggle Menu">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Navigation Overlay (Hidden by default) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-brand-navy z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 pb-6 h-screen overflow-y-auto">
-        <button id="close-menu-btn" class="absolute top-6 right-6 text-white hover:text-brand-gold">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <nav class="flex flex-col gap-6 text-xl font-serif text-white">
-            <a href="#home" class="mobile-link">Home</a>
-            <a href="#about" class="mobile-link">About Us</a>
-            <a href="#services" class="mobile-link">Our Services</a>
-            <a href="#tenders" class="mobile-link">Tenders</a>
-            <a href="#process" class="mobile-link">How It Works</a>
-            <a href="#contact" class="mobile-link">Contact Us</a>
-            <div class="h-px bg-white/10 w-full my-2"></div>
-            <a href="#" class="text-brand-gold">Login</a>
-            <a href="#" class="text-brand-gold">Register</a>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-[60] transform translate-x-full transition-transform duration-400 flex flex-col pt-8 px-6 pb-6 h-screen overflow-y-auto">
+        <div class="flex justify-between items-center mb-12">
+            <span class="font-display font-extrabold text-2xl text-white tracking-tight">TenderNex</span>
+            <button id="close-menu-btn" class="text-white bg-white/10 p-2 rounded-lg hover:bg-brand-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-6 text-xl font-display font-semibold text-slate-200">
+            <a href="#home" class="mobile-link hover:text-white hover:translate-x-2 transition-all">Home</a>
+            <a href="#about" class="mobile-link hover:text-white hover:translate-x-2 transition-all">Our 5% Model</a>
+            <a href="#services" class="mobile-link hover:text-white hover:translate-x-2 transition-all">A-Z Services</a>
+            <a href="#gem" class="mobile-link hover:text-white hover:translate-x-2 transition-all">GeM Services</a>
+            <a href="#faq" class="mobile-link hover:text-white hover:translate-x-2 transition-all">FAQ</a>
+            
+            <div class="mt-8 p-6 bg-white/5 rounded-2xl border border-white/10">
+                <p class="text-sm text-slate-400 mb-2">Contact Jay Byapari</p>
+                <a href="tel:+916294931919" class="text-white flex items-center gap-3 mb-4 text-lg">
+                    <i data-lucide="phone" class="w-5 h-5 text-brand-400"></i> +91 6294931919
+                </a>
+                <a href="#contact" class="mobile-link w-full inline-flex justify-center bg-brand-500 text-white px-6 py-4 rounded-xl text-base transition-colors">
+                    Discuss Requirement
+                </a>
+            </div>
         </nav>
     </div>
 
-    <!-- 2. HERO SECTION -->
-    <section id="home" class="relative min-h-screen bg-brand-navy flex items-center pt-24 overflow-hidden">
-        <!-- Abstract Background -->
-        <div class="absolute inset-0 bg-dot-pattern opacity-30"></div>
-        <div class="absolute right-0 top-0 w-2/3 h-full bg-gradient-to-l from-brand-navylight/40 to-transparent"></div>
-        
-        <!-- Subtle glowing orb -->
-        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <!-- MAIN CONTENT AREA -->
+    <main>
 
-        <div class="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <!-- MODERN HERO SECTION -->
+        <section id="home" class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 modern-grid opacity-60"></div>
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-100 rounded-full blur-[120px] opacity-60 animate-blob mix-blend-multiply pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-brand-200/50 rounded-full blur-[100px] opacity-60 animate-blob animation-delay-2000 mix-blend-multiply pointer-events-none"></div>
             
-            <!-- Hero Text -->
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-3 py-1 border border-brand-gold/30 rounded-full mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                    <span class="text-xs font-medium tracking-wider text-brand-gold uppercase">Premium Tender Consultancy</span>
-                </div>
-                
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6">
-                    Your Tender <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Opportunity &amp; Submission</span> <br>
-                    Partner.
-                </h1>
-                
-                <p class="text-lg md:text-xl text-gray-300 font-light mb-4">
-                    Discover suitable government and private tender opportunities for your business.
-                </p>
-                <p class="text-base text-gray-400 mb-10 max-w-lg leading-relaxed">
-                    We help businesses identify suitable tenders, verify requirements, match opportunities with costing, and manage the tender submission process from A to Z.
-                </p>
-                
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#tenders" class="bg-brand-gold hover:bg-brand-goldlight text-brand-navy font-semibold px-8 py-4 rounded-sm transition-all shadow-[0_0_20px_rgba(201,162,39,0.3)] hover:shadow-[0_0_30px_rgba(201,162,39,0.5)]">
-                        Explore Tenders
-                    </a>
-                    <a href="#contact" class="btn-outline-ghost px-8 py-4 rounded-sm text-white font-medium flex items-center gap-2">
-                        Get Started <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Abstract Visual (Dashboard/Document Mockup) -->
-            <div class="hidden lg:block relative h-[600px] w-full" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-                <!-- Main Dashboard Card -->
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] h-[400px] bg-brand-navydark/80 backdrop-blur-md border border-white/10 rounded-lg p-6 shadow-2xl z-20">
-                    <!-- UI Header -->
-                    <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                        <div class="flex gap-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                        </div>
-                        <div class="h-2 w-24 bg-white/10 rounded"></div>
-                    </div>
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-16 items-center">
                     
-                    <!-- UI Grid -->
-                    <div class="grid grid-cols-3 gap-6 mb-6">
-                        <div class="h-24 rounded border border-white/5 bg-white/5 p-4 flex flex-col justify-between">
-                            <div class="h-2 w-12 bg-brand-gold/50 rounded mb-2"></div>
-                            <div class="h-6 w-20 bg-white/20 rounded"></div>
+                    <!-- Left: Text Content -->
+                    <div class="lg:col-span-7">
+                        <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 border border-brand-200 rounded-full mb-8 shadow-sm">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-600"></span>
+                            </span>
+                            <span class="text-sm font-bold text-brand-700 tracking-wide">No Upfront Fees. Zero Subscription.</span>
                         </div>
-                        <div class="h-24 rounded border border-brand-gold/30 bg-brand-gold/10 p-4 flex flex-col justify-between relative overflow-hidden">
-                            <div class="absolute right-0 bottom-0 w-16 h-16 bg-brand-gold/20 blur-xl"></div>
-                            <div class="h-2 w-16 bg-brand-gold rounded mb-2"></div>
-                            <div class="h-6 w-24 bg-brand-gold/80 rounded relative z-10"></div>
-                        </div>
-                        <div class="h-24 rounded border border-white/5 bg-white/5 p-4 flex flex-col justify-between">
-                            <div class="h-2 w-14 bg-white/30 rounded mb-2"></div>
-                            <div class="h-6 w-16 bg-white/20 rounded"></div>
-                        </div>
-                    </div>
-
-                    <!-- UI Chart Area -->
-                    <div class="h-40 border border-white/5 bg-gradient-to-t from-white/5 to-transparent rounded p-4 relative">
-                        <!-- Abstract Line Chart SVG -->
-                        <svg class="absolute bottom-0 left-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 400 100">
-                            <path d="M0 80 Q 50 20, 100 50 T 200 40 T 300 70 T 400 30" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M0 80 Q 50 20, 100 50 T 200 40 T 300 70 T 400 30 L 400 100 L 0 100 Z" fill="url(#grad)" opacity="0.2"/>
-                            <defs>
-                                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#C9A227"/>
-                                    <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Floating Abstract Document 1 -->
-                <div class="absolute -left-12 top-20 w-64 h-80 bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-5 shadow-2xl transform -rotate-6 z-10 translate-y-4 animate-[bounce_8s_infinite_alternate]">
-                    <div class="w-10 h-10 rounded bg-brand-gold/20 mb-6 flex items-center justify-center">
-                        <i data-lucide="file-text" class="text-brand-gold w-5 h-5"></i>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="h-2 w-3/4 bg-white/20 rounded"></div>
-                        <div class="h-2 w-full bg-white/10 rounded"></div>
-                        <div class="h-2 w-5/6 bg-white/10 rounded"></div>
-                        <div class="h-2 w-4/6 bg-white/10 rounded"></div>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-white/10 flex justify-between">
-                        <div class="h-2 w-12 bg-white/20 rounded"></div>
-                        <div class="h-2 w-12 bg-green-400/50 rounded"></div>
-                    </div>
-                </div>
-
-                <!-- Floating Stat Card 2 -->
-                <div class="absolute right-12 -bottom-10 w-56 bg-brand-navy border border-brand-gold/40 rounded-lg p-5 shadow-2xl z-30 transform translate-y-2 animate-[bounce_6s_infinite_alternate-reverse]">
-                    <div class="flex items-center gap-4 mb-2">
-                        <div class="w-12 h-12 rounded-full bg-brand-gold/20 flex items-center justify-center border border-brand-gold/30">
-                            <i data-lucide="check-circle" class="text-brand-gold w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-serif text-white font-bold">98%</div>
-                            <div class="text-xs text-gray-400 uppercase tracking-wider">Success Rate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. ABOUT US -->
-    <section id="about" class="py-24 bg-white relative">
-        <div class="absolute top-0 left-0 w-32 h-32 bg-grid-pattern opacity-50"></div>
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
-                    <h4 class="text-brand-gold font-semibold uppercase tracking-widest text-sm mb-3">Who We Are</h4>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-6">About TENDER NEX INDIA</h2>
-                    <div class="w-20 h-1 bg-brand-gold mb-8"></div>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        TENDER NEX INDIA helps businesses discover, evaluate, and pursue suitable tender opportunities. We operate at the intersection of market intelligence and strategic consulting.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed mb-8">
-                        We simplify the complex tender process by helping businesses understand intricate government and private requirements, assess true opportunities, prepare impeccable documentation, and manage submissions with absolute precision.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="flex -space-x-4">
-                            <!-- Abstract Avatars representing experts -->
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-500">JD</div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-brand-navylight flex items-center justify-center text-xs font-bold text-white">AK</div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-brand-gold flex items-center justify-center text-xs font-bold text-white">MR</div>
-                        </div>
-                        <div class="text-sm text-gray-500 font-medium">Backed by industry <br> compliance experts.</div>
-                    </div>
-                </div>
-                
-                <div class="relative" data-aos="fade-left">
-                    <!-- Abstract Image Replacement -->
-                    <div class="w-full aspect-[4/3] bg-brand-offwhite rounded-sm border border-gray-100 shadow-premium p-8 relative overflow-hidden flex flex-col justify-center">
-                        <div class="absolute -right-20 -top-20 w-64 h-64 border-[40px] border-brand-gold/10 rounded-full"></div>
-                        <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-brand-navy/5 rounded-full"></div>
                         
-                        <div class="relative z-10">
-                            <i data-lucide="shield-check" class="w-16 h-16 text-brand-navy mb-6 stroke-[1.5]"></i>
-                            <h3 class="text-2xl font-serif font-bold text-brand-navy mb-2">Precision & Compliance</h3>
-                            <p class="text-gray-500">Our methodology ensures every submission meets stringent regulatory and technical standards, significantly elevating your probability of success.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Stat Strip Overlapping -->
-                    <div class="absolute -bottom-10 -left-10 bg-brand-navy text-white p-8 rounded-sm shadow-2xl hidden md:flex gap-12 border-l-4 border-brand-gold">
-                        <div>
-                            <div class="text-3xl font-serif font-bold text-brand-gold mb-1">500+</div>
-                            <div class="text-xs uppercase tracking-wider text-gray-300">Tenders Analyzed</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-serif font-bold text-brand-gold mb-1">₹50Cr+</div>
-                            <div class="text-xs uppercase tracking-wider text-gray-300">Value Awarded</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. OUR SERVICES -->
-    <section id="services" class="py-24 bg-brand-offwhite relative border-t border-gray-100">
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h4 class="text-brand-gold font-semibold uppercase tracking-widest text-sm mb-3">Expertise</h4>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-6">Our Services</h2>
-                <p class="text-gray-600">Comprehensive end-to-end support designed to navigate the complexities of government and private procurement.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service Cards -->
-                <script>
-                    const services = [
-                        { icon: 'search', title: 'Tender Search & ID', desc: 'Proactive scanning of multiple portals to find the perfect strategic match for your business capabilities.' },
-                        { icon: 'file-search', title: 'Requirement Analysis', desc: 'Deconstructing complex tender documents into clear, actionable technical and commercial criteria.' },
-                        { icon: 'check-square', title: 'Eligibility Verification', desc: 'Rigorous checking against qualification parameters to ensure you only bid where you can win.' },
-                        { icon: 'book-open', title: 'Documentation Support', desc: 'Structuring, formatting, and compiling your proposals for maximum impact and strict compliance.' },
-                        { icon: 'bar-chart-2', title: 'Costing Analysis', desc: 'Data-driven insights and risk assessment to ensure highly competitive yet profitable bidding.' },
-                        { icon: 'send', title: 'Submission Support', desc: 'End-to-end guidance through complex online portals and physical submission protocols.' },
-                        { icon: 'activity', title: 'Tracking & Updates', desc: 'Real-time monitoring of corrigendums, extension deadlines, and evaluation status.' },
-                        { icon: 'award', title: 'Post-Submission', desc: 'Professional assistance with buyer queries, technical presentations, and award formalities.' }
-                    ];
-
-                    services.forEach((s, index) => {
-                        document.write(`
-                            <div class="bg-white p-8 rounded-sm border border-gray-100 card-lift cursor-pointer flex flex-col h-full border-t-2 border-t-transparent" data-aos="fade-up" data-aos-delay="${index * 100}">
-                                <div class="w-12 h-12 bg-brand-offwhite rounded flex items-center justify-center mb-6 text-brand-navy">
-                                    <i data-lucide="${s.icon}" class="w-6 h-6 stroke-[1.5]"></i>
+                        <h1 data-aos="fade-up" class="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-brand-dark leading-[1.1] mb-6 tracking-tight">
+                            Win More Tenders.<br>
+                            <span class="text-gradient">Pay Only When You Win.</span>
+                        </h1>
+                        
+                        <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed font-medium leading-loose">
+                            TenderNex provides A-to-Z Tender and GeM management in India. We operate on a strictly transparent <strong class="bg-brand-dark text-white px-3 py-1.5 rounded-lg shadow-md border border-brand-800 mx-1 highlight-blink">Fixed 5% Success-Based Fee</strong>. You only pay after the order is won and payment is received.
+                        </p>
+                        
+                        <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                            <a href="#contact" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-500/30 flex items-center justify-center gap-2 text-lg">
+                                Talk to an Expert <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </a>
+                            <div class="flex items-center gap-4 px-6 py-4">
+                                <div class="flex -space-x-3">
+                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">G</div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-brand-200 flex items-center justify-center text-xs font-bold text-brand-700">P</div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-brand-dark flex items-center justify-center text-xs font-bold text-white"><i data-lucide="plus" class="w-4 h-4"></i></div>
                                 </div>
-                                <h3 class="text-lg font-serif font-bold text-brand-navy mb-3">${s.title}</h3>
-                                <p class="text-sm text-gray-500 leading-relaxed flex-grow">${s.desc}</p>
+                                <div class="text-sm font-semibold text-slate-600 leading-tight">
+                                    Trusted by SMEs<br>across India
+                                </div>
                             </div>
-                        `);
-                    });
-                </script>
-            </div>
-        </div>
-    </section>
+                        </div>
+                    </div>
 
-    <!-- 5. HOW WE WORK (Timeline) -->
-    <section id="process" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute right-0 bottom-0 w-64 h-64 bg-grid-pattern opacity-40"></div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-20" data-aos="fade-up">
-                <h4 class="text-brand-gold font-semibold uppercase tracking-widest text-sm mb-3">Methodology</h4>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-6">How It Works</h2>
-                <p class="text-gray-600">A structured, proven 7-step process ensuring nothing is left to chance in your bidding journey.</p>
-            </div>
-
-            <div class="relative max-w-4xl mx-auto">
-                <div class="timeline-line hidden md:block"></div>
-                
-                <div class="space-y-12 md:space-y-0">
-                    <!-- Steps generated via JS for clean markup in this environment -->
-                    <script>
-                        const steps = [
-                            "Understand Your Business",
-                            "Identify Suitable Tenders",
-                            "Verify Eligibility & Requirements",
-                            "Analyze Costing & Opportunity",
-                            "Prepare Documentation",
-                            "Manage Tender Submission",
-                            "Track Updates & Results"
-                        ];
-
-                        steps.forEach((step, idx) => {
-                            const isEven = idx % 2 === 0;
-                            const aosDirection = isEven ? 'fade-right' : 'fade-left';
-                            const alignmentClass = isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left';
-                            const gridClass = isEven ? 'md:col-start-1 md:col-end-2' : 'md:col-start-2 md:col-end-3';
-                            const flexClass = isEven ? 'md:justify-end md:flex-row-reverse' : 'md:justify-start md:flex-row';
-                            const dotPosition = isEven ? 'md:-right-3' : 'md:-left-3';
-
-                            // Mobile gets a simpler left-aligned structure, Desktop gets zigzag
-                            document.write(`
-                                <div class="relative flex md:grid md:grid-cols-2 items-center gap-8 md:gap-0" data-aos="fade-up">
-                                    <!-- Mobile Line Node -->
-                                    <div class="md:hidden flex-shrink-0 w-10 h-10 rounded-full bg-brand-navy border-4 border-brand-offwhite shadow-sm flex items-center justify-center text-brand-gold font-serif font-bold text-sm z-10">
-                                        ${idx + 1}
+                    <!-- Right: Modern Abstract UI / Floating Dashboard -->
+                    <div class="lg:col-span-5 relative hidden lg:block" data-aos="fade-left" data-aos-delay="300">
+                        <div class="relative w-full aspect-square">
+                            
+                            <!-- Main Glass Card -->
+                            <div class="absolute inset-0 bg-white/40 backdrop-blur-2xl border border-white shadow-2xl rounded-3xl p-8 z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                                <div class="flex justify-between items-center mb-8 border-b border-slate-200 pb-4">
+                                    <div class="font-display font-bold text-brand-dark text-lg">Live Opportunities</div>
+                                    <div class="flex gap-1.5">
+                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
                                     </div>
-                                    
-                                    <!-- Content Box -->
-                                    <div class="${gridClass} ${alignmentClass} w-full">
-                                        <div class="bg-brand-offwhite md:bg-transparent p-6 md:p-0 rounded-sm border border-gray-100 md:border-none shadow-sm md:shadow-none hover:shadow-premium transition-shadow duration-300 md:hover:shadow-none group relative">
-                                            
-                                            <!-- Desktop Node -->
-                                            <div class="hidden md:flex absolute top-1/2 -translate-y-1/2 ${dotPosition} w-6 h-6 rounded-full bg-white border-4 border-brand-gold z-10 group-hover:scale-125 transition-transform"></div>
-                                            
-                                            <div class="text-brand-gold font-bold font-serif text-xl mb-1 hidden md:block">Step 0${idx + 1}</div>
-                                            <h3 class="text-lg md:text-xl font-bold text-brand-navy">${step}</h3>
-                                            <p class="text-gray-500 mt-2 text-sm">Strategic alignment and execution to ensure maximum compliance and competitiveness at this stage.</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Empty space for grid alignment on desktop -->
-                                    <div class="hidden md:block"></div>
                                 </div>
-                            `);
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-    </section>
+                                
+                                <div class="space-y-4">
+                                    <!-- UI Mock Row 1 -->
+                                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm flex justify-between items-center group cursor-pointer hover:border-brand-300">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                                            <div>
+                                                <div class="h-2 w-24 bg-slate-200 rounded mb-2"></div>
+                                                <div class="h-2 w-16 bg-slate-100 rounded"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded">Matching</div>
+                                    </div>
+                                    <!-- UI Mock Row 2 -->
+                                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm flex justify-between items-center group cursor-pointer hover:border-brand-300">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
+                                            <div>
+                                                <div class="h-2 w-32 bg-slate-200 rounded mb-2"></div>
+                                                <div class="h-2 w-20 bg-slate-100 rounded"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs font-bold text-brand-500 bg-brand-50 px-2 py-1 rounded">Filing</div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- 6. WHY CHOOSE US -->
-    <section class="py-20 bg-brand-navy text-white relative">
-        <div class="absolute inset-0 bg-dot-pattern opacity-10"></div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid lg:grid-cols-3 gap-12">
-                <div class="lg:col-span-1" data-aos="fade-right">
-                    <h2 class="text-3xl font-serif font-bold mb-6">Why Choose Us</h2>
-                    <p class="text-gray-400 mb-8 leading-relaxed">
-                        We don't just find tenders; we engineer your success. Our boutique approach means deep-dive analysis, personalized strategy, and uncompromising attention to detail.
-                    </p>
-                    <a href="#contact" class="text-brand-gold font-medium flex items-center gap-2 hover:text-white transition-colors">
-                        Speak with a consultant <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-                
-                <div class="lg:col-span-2 grid sm:grid-cols-2 gap-x-8 gap-y-12">
-                    <script>
-                        const reasons = [
-                            { icon: 'target', label: 'Relevant Opportunities', desc: 'No noise, just high-probability matches.' },
-                            { icon: 'shield', label: 'Requirement Verification', desc: 'Bulletproof compliance checks.' },
-                            { icon: 'layers', label: 'End-to-End Support', desc: 'From discovery to final submission.' },
-                            { icon: 'trending-up', label: 'Business-Focused Analysis', desc: 'Aligning bids with your growth metrics.' },
-                            { icon: 'folder-check', label: 'Organized Documentation', desc: 'Impeccable formatting and structure.' },
-                            { icon: 'clock', label: 'Timely Updates', desc: 'Never miss a corrigendum or deadline.' }
-                        ];
-                        reasons.forEach((r, idx) => {
-                            document.write(`
-                                <div class="flex gap-4" data-aos="fade-up" data-aos-delay="${idx * 50}">
-                                    <div class="flex-shrink-0 w-12 h-12 rounded border border-brand-gold/30 bg-brand-gold/10 flex items-center justify-center text-brand-gold">
-                                        <i data-lucide="${r.icon}" class="w-5 h-5"></i>
+                            <!-- Floating Badge 1 -->
+                            <div class="absolute -left-12 top-1/4 bg-brand-dark text-white p-4 rounded-2xl shadow-xl z-20 animate-float border border-brand-700">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white">
+                                        <i data-lucide="percent" class="w-6 h-6 stroke-[3]"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold font-serif text-lg mb-1">${r.label}</h4>
-                                        <p class="text-gray-400 text-sm">${r.desc}</p>
+                                        <div class="font-display font-bold text-2xl leading-none highlight-blink">5%</div>
+                                        <div class="text-xs text-brand-200 uppercase tracking-wider font-semibold mt-1">Fixed Success Fee</div>
                                     </div>
-                                </div>
-                            `);
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. TENDER SECTION (UI Mockup) -->
-    <section id="tenders" class="py-24 bg-brand-offwhite">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-navy mb-4">Explore Tender Opportunities</h2>
-                <p class="text-gray-600">Find tenders relevant to your business, products, services, location, and eligibility criteria across thousands of sources.</p>
-            </div>
-
-            <!-- Search UI Mockup -->
-            <div class="bg-white rounded-md shadow-premium p-4 md:p-6 mb-12 max-w-5xl mx-auto border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="border border-gray-200 rounded px-4 py-3 flex items-center gap-3 hover:border-brand-gold transition-colors cursor-text">
-                        <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
-                        <input type="text" placeholder="Keywords (e.g. IT, Construction)" class="bg-transparent border-none outline-none text-sm w-full text-brand-navy" disabled>
-                    </div>
-                    <div class="border border-gray-200 rounded px-4 py-3 flex items-center justify-between hover:border-brand-gold transition-colors cursor-pointer">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-gray-400"></i>
-                            <span class="text-sm text-gray-500">All Locations</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
-                    </div>
-                    <div class="border border-gray-200 rounded px-4 py-3 flex items-center justify-between hover:border-brand-gold transition-colors cursor-pointer">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="dollar-sign" class="w-4 h-4 text-gray-400"></i>
-                            <span class="text-sm text-gray-500">Value Range</span>
-                        </div>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
-                    </div>
-                    <button class="bg-brand-navy hover:bg-brand-navylight text-white font-medium rounded transition-colors flex items-center justify-center gap-2 py-3 md:py-0">
-                        Search Tenders
-                    </button>
-                </div>
-            </div>
-
-            <!-- Sample Tenders Grid -->
-            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-                <script>
-                    const sampleTenders = [
-                        { id: "TND-2026-881", title: "Provision of IT Infrastructure and Cloud Migration Services", org: "Ministry of Electronics", val: "₹5.2 Cr", date: "15 Sep 2026", tag: "Closing Soon" },
-                        { id: "TND-2026-902", title: "Construction of 500-bed Multi-Specialty Hospital Block", org: "State Health Dept", val: "₹120 Cr", date: "28 Sep 2026", tag: "New" },
-                        { id: "TND-2026-874", title: "Supply and Installation of Solar Power Panels (50MW)", org: "Renewable Energy Corp", val: "₹18 Cr", date: "02 Oct 2026", tag: "High Value" }
-                    ];
-
-                    sampleTenders.forEach((t, i) => {
-                        let tagColor = t.tag === 'Closing Soon' ? 'bg-red-50 text-red-600 border-red-100' : 
-                                       t.tag === 'New' ? 'bg-green-50 text-green-600 border-green-100' : 
-                                       'bg-blue-50 text-blue-600 border-blue-100';
-
-                        document.write(`
-                            <div class="bg-white border border-gray-200 p-6 rounded-sm hover:shadow-premium transition-shadow relative group cursor-pointer" data-aos="fade-up" data-aos-delay="${i * 100}">
-                                <div class="absolute top-6 right-6 px-2 py-1 border text-[10px] font-bold uppercase tracking-wider rounded ${tagColor}">
-                                    ${t.tag}
-                                </div>
-                                <div class="text-xs text-gray-400 mb-2 font-mono">${t.id}</div>
-                                <h3 class="font-serif font-bold text-brand-navy text-lg mb-4 line-clamp-2 group-hover:text-brand-gold transition-colors">${t.title}</h3>
-                                <div class="space-y-2 mb-6">
-                                    <div class="flex items-center gap-2 text-sm text-gray-600">
-                                        <i data-lucide="building" class="w-4 h-4 text-gray-400"></i> ${t.org}
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-gray-600">
-                                        <i data-lucide="banknote" class="w-4 h-4 text-gray-400"></i> Est. Value: <strong class="text-brand-navy">${t.val}</strong>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                                    <div class="text-sm font-medium text-brand-navy flex items-center gap-1">
-                                        <i data-lucide="calendar" class="w-4 h-4 text-gray-400"></i> ${t.date}
-                                    </div>
-                                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1"></i>
                                 </div>
                             </div>
-                        `);
-                    });
-                </script>
+
+                            <!-- Floating Badge 2 -->
+                            <div class="absolute -right-8 bottom-12 bg-white p-5 rounded-2xl shadow-2xl z-20 animate-float border border-slate-100" style="animation-delay: 1.5s;">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-500"></i>
+                                    <span class="font-bold text-sm text-brand-dark uppercase tracking-wide">GeM Certified</span>
+                                </div>
+                                <div class="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-brand-400 to-brand-600 w-3/4"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="text-center">
-                <a href="#" class="inline-flex items-center gap-2 font-medium text-brand-navy hover:text-brand-gold transition-colors border-b-2 border-brand-gold pb-1">
-                    View Latest Tenders <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+        <!-- BENTO BOX SECTION: How The Model Works -->
+        <section id="about" class="py-24 bg-slate-100 relative">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3 block">Trust & Transparency</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-extrabold text-brand-dark mb-4 tracking-tight">Zero Upfront Risk.</h2>
+                    <p class="text-slate-600 text-lg">We invest our resources and expertise upfront. Our success is directly tied to yours, making us true partners in your business growth.</p>
+                </div>
 
-    <!-- 8. BUSINESS OPPORTUNITY BAND -->
-    <section class="py-20 bg-brand-gold relative overflow-hidden">
-        <div class="absolute inset-0 bg-grid-pattern opacity-10 mix-blend-overlay"></div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-navy mb-6 tracking-tight">More Than Finding Tenders.</h2>
-            <p class="text-brand-navydark/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                We help you understand whether an opportunity is suitable for your business, what is required, what the estimated cost may be, and how to approach the submission strategically.
-            </p>
-        </div>
-    </section>
-
-    <!-- 9. CTA BAND & 10. CONTACT SECTION MERGED -->
-    <section id="contact" class="py-24 bg-white relative">
-        <div class="container mx-auto px-6 lg:px-12">
-            
-            <div class="bg-brand-navy rounded-lg shadow-2xl overflow-hidden" data-aos="fade-up">
-                <div class="grid lg:grid-cols-5">
+                <!-- Modern Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                     
-                    <!-- Left Side: Info & CTA Text -->
-                    <div class="lg:col-span-2 bg-brand-navy text-white p-10 lg:p-12 relative">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-bl-full"></div>
-                        
-                        <h3 class="text-3xl font-serif font-bold mb-4">Looking for the Right Tender?</h3>
-                        <p class="text-gray-400 mb-10 text-sm leading-relaxed">
-                            Tell us about your business, capabilities, and requirements. Our experts will craft a personalized roadmap to tender success.
-                        </p>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-gold mt-1"></i>
-                                <div>
-                                    <h4 class="font-bold text-sm">Headquarters</h4>
-                                    <p class="text-gray-400 text-sm">Tech Park, Sector 62,<br>Noida, India 201309</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <i data-lucide="phone" class="w-5 h-5 text-brand-gold"></i>
-                                <div>
-                                    <h4 class="font-bold text-sm">Phone</h4>
-                                    <p class="text-gray-400 text-sm">+91 98765 43210</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <i data-lucide="mail" class="w-5 h-5 text-brand-gold"></i>
-                                <div>
-                                    <h4 class="font-bold text-sm">Email</h4>
-                                    <p class="text-gray-400 text-sm">consult@tendernex.in</p>
-                                </div>
-                            </div>
+                    <!-- Large Feature -->
+                    <div class="bento-card p-8 md:col-span-2 lg:col-span-2 flex flex-col justify-between min-h-[300px]" data-aos="fade-up">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6">
+                            <i data-lucide="search-check" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-display font-bold text-brand-dark mb-3">1. Identify & Verify</h3>
+                            <p class="text-slate-600 leading-relaxed font-medium">We proactively search for highly relevant tenders. Before any filing, we rigorously verify your eligibility, technical parameters, and requirements to ensure a high probability of success.</p>
                         </div>
                     </div>
 
-                    <!-- Right Side: Form -->
-                    <div class="lg:col-span-3 bg-white p-10 lg:p-12 border border-gray-100">
-                        <h3 class="text-2xl font-serif font-bold text-brand-navy mb-8">Contact TENDER NEX INDIA</h3>
-                        <form id="contact-form" class="space-y-6" onsubmit="event.preventDefault(); alert('In a live environment, this would submit your enquiry to our CRM.');">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Name</label>
-                                    <input type="text" required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Company Name</label>
-                                    <input type="text" required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
-                                </div>
+                    <!-- Medium Feature -->
+                    <div class="bento-card p-8 md:col-span-1 lg:col-span-2 bg-gradient-to-br from-brand-800 to-brand-dark text-white border-none" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-6 backdrop-blur-sm">
+                            <i data-lucide="file-signature" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-display font-bold text-white mb-3">2. Manage Process</h3>
+                            <p class="text-brand-100 leading-relaxed font-medium text-sm">We handle the heavy lifting: documentation, compliance checks, catalogue creation, and the secure final submission of the bid. You focus on your business.</p>
+                        </div>
+                    </div>
+
+                    <!-- Medium Feature -->
+                    <div class="bento-card p-8 md:col-span-2 lg:col-span-2" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+                            <i data-lucide="trophy" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-display font-bold text-brand-dark mb-3">3. Win & Process Order</h3>
+                            <p class="text-slate-600 leading-relaxed font-medium text-sm">Upon winning, we don't disappear. We coordinate the purchase order process and provide vital post-order assistance for smooth execution.</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Feature -->
+                    <div class="bento-card p-8 md:col-span-1 lg:col-span-2 border-2 border-brand-500 bg-brand-50/50" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center shadow-glow">
+                                <i data-lucide="wallet" class="w-7 h-7"></i>
                             </div>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Mobile Number</label>
-                                    <input type="tel" required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                            <div class="font-display font-bold text-brand-dark text-xl">The <span class="highlight-blink">5%</span> Promise</div>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed font-medium">You receive the applicable government/buyer payment. <strong>Only then</strong> does TenderNex receive the <span class="highlight-blink text-brand-600 font-bold">agreed fixed 5% service fee</span>. Absolute transparency.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: /services (A-to-Z Tender Services) -->
+        <section id="services" class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-12 gap-16 items-center">
+                    
+                    <div class="lg:col-span-4" data-aos="fade-right">
+                        <h2 class="text-4xl md:text-5xl font-display font-extrabold text-brand-dark mb-6 tracking-tight">Complete A-Z Services.</h2>
+                        <p class="text-lg text-slate-600 mb-8 font-medium">We manage the process carefully to reduce preventable documentation, specification, and compliance issues.</p>
+                        
+                        <a href="#contact" class="inline-flex items-center gap-2 font-bold text-brand-600 hover:text-brand-800 transition-colors group text-lg">
+                            Discuss Your Requirement 
+                            <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-brand-100 transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+                        
+                        <!-- Cards are now pure white to pop against the slate background -->
+                        <div class="p-8 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up">
+                            <i data-lucide="scan-search" class="w-10 h-10 text-brand-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-xl font-display font-bold text-brand-dark mb-3">Tender Search & Shortlisting</h3>
+                            <p class="text-slate-600 text-sm font-medium">Active monitoring of portals to find highly relevant opportunities matching your exact capabilities.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                            <i data-lucide="file-check-2" class="w-10 h-10 text-brand-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-xl font-display font-bold text-brand-dark mb-3">Filing & Documentation</h3>
+                            <p class="text-slate-600 text-sm font-medium">Impeccable document preparation, requirement verification, and ensuring strict compliance with complex buyer specs.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                            <i data-lucide="send-to-back" class="w-10 h-10 text-brand-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-xl font-display font-bold text-brand-dark mb-3">Submission & Bidding</h3>
+                            <p class="text-slate-600 text-sm font-medium">Secure and precise management of the actual tender filling and bidding process to prevent technical rejections.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                            <i data-lucide="truck" class="w-10 h-10 text-brand-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-xl font-display font-bold text-brand-dark mb-3">Post-Order Support</h3>
+                            <p class="text-slate-600 text-sm font-medium">Complete coordination during the supply process and assistance with payment documentation.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: /gem-tender-services (GeM Specific Section) -->
+        <section id="gem" class="py-24 relative overflow-hidden bg-brand-dark">
+            <div class="absolute inset-0 modern-grid opacity-20 invert"></div>
+            <div class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-tl from-brand-600/20 to-transparent pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-brand-200 font-semibold text-xs rounded-full mb-6 uppercase tracking-widest border border-white/20">
+                            <i data-lucide="star" class="w-3 h-3"></i> GeM Specialists
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-display font-extrabold text-white mb-6">Mastering the Government e-Marketplace.</h2>
+                        <p class="text-slate-300 mb-8 text-lg font-medium leading-relaxed">
+                            GeM is lucrative but complex. TenderNex provides specialized management to ensure your products and services are perfectly positioned to capture government orders.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="package-search" class="w-5 h-5 text-emerald-400"></i>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Email Address</label>
-                                    <input type="email" required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                                    <strong class="text-white block text-lg font-display">Product Catalogue Creation</strong>
+                                    <span class="text-sm text-slate-400 font-medium mt-1 block">Accurate listing adhering to strict GeM taxonomy guidelines.</span>
                                 </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your Requirement</label>
-                                <select required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors appearance-none">
-                                    <option value="" disabled selected>Select an option...</option>
-                                    <option value="search">Tender Search & Identification</option>
-                                    <option value="submission">End-to-End Submission Support</option>
-                                    <option value="documentation">Documentation Review</option>
-                                    <option value="other">Other Consulting Services</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Message</label>
-                                <textarea rows="4" required class="w-full bg-brand-offwhite border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors resize-none"></textarea>
                             </div>
                             
-                            <button type="submit" class="bg-brand-navy hover:bg-brand-navylight text-white font-medium px-8 py-4 rounded-sm transition-colors shadow-premium w-full md:w-auto">
-                                Submit Enquiry
-                            </button>
-                        </form>
+                            <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                                <div class="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="badge-check" class="w-5 h-5 text-brand-400"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-lg font-display">OEM Application Assistance</strong>
+                                    <span class="text-sm text-slate-400 font-medium mt-1 block">Streamlined guidance through the rigorous OEM authorization panel.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Graphic -->
+                    <div class="lg:w-1/2 w-full" data-aos="fade-left">
+                        <div class="relative w-full max-w-lg mx-auto aspect-square">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-brand-400 rounded-full blur-[80px] opacity-40"></div>
+                            <div class="relative z-10 w-full h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col justify-center shadow-2xl">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center">
+                                        <i data-lucide="shopping-cart" class="w-8 h-8 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-display font-bold text-white">Order Lifecycle</div>
+                                        <div class="text-brand-300 text-sm">End-to-end GeM Coordination</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4 relative before:absolute before:inset-y-4 before:left-3.5 before:w-0.5 before:bg-white/20">
+                                    <div class="flex gap-6 relative z-10">
+                                        <div class="w-7 h-7 rounded-full bg-brand-500 border-4 border-brand-dark flex-shrink-0 shadow-[0_0_15px_rgba(104,117,245,0.5)]"></div>
+                                        <div class="pt-0.5">
+                                            <div class="font-bold text-white text-lg">Spotting L1 & RA</div>
+                                            <div class="text-sm text-slate-400 mt-1">Identifying Reverse Auctions & Bids</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-6 relative z-10">
+                                        <div class="w-7 h-7 rounded-full bg-brand-500 border-4 border-brand-dark flex-shrink-0"></div>
+                                        <div class="pt-0.5">
+                                            <div class="font-bold text-white text-lg">Tech Parameter Matching</div>
+                                            <div class="text-sm text-slate-400 mt-1">Precise bid submission</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-6 relative z-10">
+                                        <div class="w-7 h-7 rounded-full bg-emerald-400 border-4 border-brand-dark flex-shrink-0 shadow-[0_0_15px_rgba(52,211,153,0.5)]"></div>
+                                        <div class="pt-0.5">
+                                            <div class="font-bold text-white text-lg">Purchase Order & Supply</div>
+                                            <div class="text-sm text-slate-400 mt-1">Managing documentation upon PO receipt</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 11. FOOTER -->
-    <footer class="bg-brand-navydark text-white border-t border-white/10 pt-16 pb-8">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- PAGE: /faq (Expanded and Detailed) -->
+        <section id="faq" class="py-24 bg-slate-100 relative border-t border-slate-200">
+            <div class="container mx-auto px-6 lg:px-12 max-w-4xl">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-3 block">Clarity & Trust</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-extrabold text-brand-dark mb-4 tracking-tight">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 text-lg">Transparent answers about our <span class="highlight-blink text-brand-600 font-bold">5%</span> success-based model and tender processes.</p>
+                </div>
                 
-                <!-- Brand Col -->
-                <div class="lg:col-span-2">
-                    <a href="#" class="flex items-center gap-3 mb-6">
-                        <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-brand-gold">
-                            <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
-                            <path d="M12 14H28M20 14V26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <div class="flex flex-col">
-                            <span class="font-serif font-bold text-lg leading-tight tracking-wide">TENDER NEX</span>
-                            <span class="text-[0.6rem] tracking-[0.3em] font-medium text-brand-gold uppercase leading-none">India</span>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">Do you charge any upfront fees or subscriptions?</h3>
+                        <p class="text-slate-600 font-medium">No. We operate <span class="highlight-blink text-brand-600 font-bold">strictly on a 5% success-based fee</span>. There are zero hidden charges, monthly subscriptions, or initial consultancy costs.</p>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="50">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">What does "success-based" mean and when is payment made?</h3>
+                        <p class="text-slate-600 font-medium">It means we only earn when you earn. You pay our <span class="highlight-blink text-brand-600 font-bold">fixed 5% service fee</span> <strong>only after</strong> you have successfully won the tender, fulfilled the order, and the government or buyer has credited the payment to your account.</p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">How do you handle tender selection and eligibility?</h3>
+                        <p class="text-slate-600 font-medium">We actively scan government portals matching your exact product and service categories. Before any filing begins, our team rigorously verifies your technical parameters and eligibility to ensure a high probability of winning.</p>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="150">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">What are the client's responsibilities?</h3>
+                        <p class="text-slate-600 font-medium">Your primary responsibility is providing accurate company documents on time and successfully fulfilling the order once awarded. We handle all the heavy lifting: compliance checks, document formatting, catalogue listings, and secure bid submission.</p>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">What specific documents are required?</h3>
+                        <p class="text-slate-600 font-medium">While requirements vary per tender, standard documents include your GST certificate, PAN, company registration (incorporation certificate), financial statements/ITR, and technical brochures. We will provide you with a customized checklist for every bid.</p>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="250">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">What happens after winning the tender?</h3>
+                        <p class="text-slate-600 font-medium">Our job doesn't end with a win. We coordinate the Purchase Order (PO) process and guide you through the post-order supply chain, ensuring all required payment documentation is perfectly aligned for prompt government payment.</p>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-display font-bold text-brand-dark mb-3">What GeM services do you offer?</h3>
+                        <p class="text-slate-600 font-medium">Our complete end-to-end GeM (Government e-Marketplace) management includes profile creation, exact taxonomy product catalogue listing, OEM application assistance, Reverse Auction (RA) bidding, and full order processing support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & INFO SECTION (Upgraded - Form Removed) -->
+        <section id="contact" class="py-24 bg-brand-dark relative overflow-hidden text-white">
+            <div class="absolute inset-0 modern-grid opacity-20 invert pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600 rounded-full blur-[150px] opacity-30 pointer-events-none"></div>
+            
+            <div class="container mx-auto px-6 lg:px-12 relative z-10 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl md:text-5xl font-display font-extrabold mb-4">Let's Talk Business.</h3>
+                    <p class="text-brand-200 font-medium text-lg max-w-2xl mx-auto">Zero upfront fees. Connect directly with our experts to discuss your specific tender requirements and start winning.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-8 md:p-12 shadow-2xl">
+                    <div class="text-center mb-10">
+                        <p class="text-brand-300 uppercase tracking-widest text-sm font-semibold mb-2">Direct Contact</p>
+                        <h4 class="text-2xl font-display font-bold mb-6">Jay Byapari</h4>
+                        
+                        <!-- Massive Click-to-Call Button -->
+                        <a href="tel:+916294931919" class="inline-flex items-center justify-center gap-4 bg-brand-500 hover:bg-brand-400 text-white px-8 py-5 md:px-12 md:py-6 rounded-2xl text-2xl md:text-4xl font-display font-extrabold transition-all shadow-glow hover:scale-105 hover:shadow-[0_0_40px_rgba(104,117,245,0.6)]">
+                            <i data-lucide="phone-call" class="w-8 h-8 md:w-10 md:h-10 animate-pulse"></i> +91 6294931919
+                        </a>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 border-t border-white/10 pt-10 text-left">
+                        
+                        <!-- Calling Hours -->
+                        <div class="bg-black/30 rounded-2xl p-6 border border-white/10 shadow-inner">
+                            <div class="flex items-center gap-3 mb-5 text-brand-300">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span class="font-bold uppercase tracking-wide">Calling Hours</span>
+                            </div>
+                            <div class="space-y-4 text-sm font-medium">
+                                <div class="border-b border-white/10 pb-3">
+                                    <div class="text-white font-bold mb-1">Monday - Friday</div>
+                                    <div class="text-brand-200 flex flex-col gap-1 mt-2">
+                                        <span class="flex items-center gap-2"><i data-lucide="sun" class="w-3.5 h-3.5"></i> 6:00 AM to 11:00 AM</span>
+                                        <span class="flex items-center gap-2"><i data-lucide="moon" class="w-3.5 h-3.5"></i> 1:00 PM to 11:00 PM</span>
+                                    </div>
+                                </div>
+                                <div class="pt-1">
+                                    <div class="text-white font-bold mb-1">Saturday - Sunday</div>
+                                    <div class="text-brand-200 flex items-center gap-2 mt-2">
+                                        <i data-lucide="calendar-days" class="w-3.5 h-3.5"></i> 6:00 AM to 11:00 PM
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Info Details -->
+                        <div class="space-y-5 flex flex-col justify-center">
+                            <a href="mailto:tendernexindia@gmail.com" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-brand-500 transition-colors">
+                                    <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-300 uppercase tracking-wider mb-1">Email</div>
+                                    <div class="font-medium text-white group-hover:text-brand-200 transition-colors">tendernexindia@gmail.com</div>
+                                </div>
+                            </a>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-300 uppercase tracking-wider mb-1">Location</div>
+                                    <div class="font-medium text-white">Sodepur, Kolkata, WB</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                                    <i data-lucide="receipt" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-300 uppercase tracking-wider mb-1">GSTIN</div>
+                                    <div class="font-medium text-white tracking-wider">19IVGPB7449H1Z5</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODERN FOOTER -->
+    <footer class="bg-slate-50 border-t border-slate-200 pt-20 pb-10">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-5">
+                    <a href="#" class="flex items-center gap-2.5 mb-6 group">
+                        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-900 to-brand-600 flex items-center justify-center text-white shadow-glow group-hover:scale-105 transition-transform duration-300 border border-brand-400/30 relative overflow-hidden">
+                            <span class="font-display font-black text-base tracking-tighter relative z-10">T<span class="text-brand-300">N</span></span>
+                        </div>
+                        <span class="font-display font-extrabold text-2xl text-brand-dark tracking-tight">TenderNex</span>
                     </a>
-                    <p class="text-gray-400 text-sm max-w-sm font-medium tracking-wide leading-relaxed">
-                        Tender Search • Tender Analysis • Documentation • Submission Support
+                    <p class="text-slate-600 text-sm max-w-sm mb-6 leading-relaxed font-medium">
+                        Complete Tender & GeM Tender Management Services in India. No Subscription. No Upfront Fees. <span class="highlight-blink text-brand-600 font-bold">Fixed 5% Success-Based Service Fee.</span>
                     </p>
-                    <div class="flex gap-4 mt-6">
-                        <!-- Socials -->
-                        <a href="#" class="w-8 h-8 rounded border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-gold transition-colors">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded border border-white/20 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-gold transition-colors">
-                            <i data-lucide="twitter" class="w-4 h-4"></i>
-                        </a>
+                    
+                    <div class="space-y-3 text-sm text-slate-700 font-semibold">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-brand-500"></i> Sodepur, Kolkata, West Bengal
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-500"></i> +91 6294931919 (Jay Byapari)
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-brand-500"></i> tendernexindia@gmail.com
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="receipt" class="w-4 h-4 text-brand-500"></i> GST: 19IVGPB7449H1Z5
+                        </div>
                     </div>
                 </div>
 
-                <!-- Links Col 1 -->
-                <div>
-                    <h4 class="font-serif font-bold text-lg mb-6">Company</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="#home" class="hover:text-brand-gold transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-brand-gold transition-colors">About Us</a></li>
-                        <li><a href="#services" class="hover:text-brand-gold transition-colors">Services</a></li>
-                        <li><a href="#tenders" class="hover:text-brand-gold transition-colors">Tenders</a></li>
-                        <li><a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                <!-- Quick Links -->
+                <div class="lg:col-span-3 lg:col-start-7">
+                    <h4 class="font-display font-bold text-brand-dark mb-6 text-lg">Services</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-600">
+                        <li><a href="#services" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> Tender Management</a></li>
+                        <li><a href="#gem" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> GeM Tender Services</a></li>
+                        <li><a href="#services" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> Filing & Submission</a></li>
+                        <li><a href="#gem" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> Product Catalogue</a></li>
                     </ul>
                 </div>
 
-                <!-- Links Col 2 -->
-                <div>
-                    <h4 class="font-serif font-bold text-lg mb-6">Legal</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-brand-gold transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition-colors">Terms & Conditions</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition-colors">Disclaimer</a></li>
+                <!-- Company -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-display font-bold text-brand-dark mb-6 text-lg">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-600">
+                        <li><a href="#home" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> About TenderNex</a></li>
+                        <li><a href="#about" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> Our 5% Model</a></li>
+                        <li><a href="#faq" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> FAQs</a></li>
+                        <li><a href="#contact" class="hover:text-brand-600 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-brand-400"></i> Contact Us</a></li>
                     </ul>
                 </div>
-
             </div>
             
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                <p>&copy; 2026 TENDER NEX INDIA. All Rights Reserved.</p>
-                <p>Designed for Excellence.</p>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-500">
+                <p>&copy; 2026 TenderNex India. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-600 transition-colors">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -776,8 +932,8 @@
         // Initialize Animate On Scroll
         AOS.init({
             once: true,
-            offset: 50,
-            duration: 800,
+            offset: 40,
+            duration: 700,
             easing: 'ease-out-cubic',
         });
 
@@ -786,8 +942,12 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 header.classList.add('scrolled');
+                header.classList.remove('md:top-[33px]');
+                header.classList.add('top-0');
             } else {
                 header.classList.remove('scrolled');
+                header.classList.remove('top-0');
+                header.classList.add('md:top-[33px]');
             }
         });
 
